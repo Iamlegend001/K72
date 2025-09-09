@@ -9,13 +9,22 @@ const Agence = () => {
   const imageRef = useRef(null);
 
   const imageArray = [
-    "https://k72.ca/uploads/teamMembers/Chantal_640X960-640x960.jpg",
-    "https://k72.ca/uploads/teamMembers/Isa_640X960-640x960.jpg",
-    "https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/Olivier_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/Lawrence_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/HugoJoseph_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/ChantalG_480x640-480x640.jpg",
+    "/Images/Image (1).jpg",
+    "/Images/Image (2).jpg",
+    "/Images/Image (3).jpg",
+    "/Images/Image (4).jpg",
+    "/Images/Image (5).jpg",
+    "/Images/Image (6).jpg",
+    "/Images/Image (7).jpg",
+    "/Images/Image (8).jpg",
+    "/Images/Image (9).jpg",
+    "/Images/Image (10).jpg",
+    "/Images/Image (11).jpg",
+    "/Images/Image (12).jpg",
+    "/Images/Image (13).jpg",
+    "/Images/Image (14).jpg",
+    "/Images/Image (15).jpg",
+    "/Images/Image (16).jpg",
   ];
 
   useGSAP(function () {
@@ -25,8 +34,14 @@ const Agence = () => {
         markers: true,
         start: "top 36%",
         end: "top -70%",
-        scrub: true,
+
         pin: true,
+        pinSpacing: true,
+        pinReparent: true,
+        pinType: "transform",
+        scrub: 1,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
         onUpdate: function (elem) {
           let imageIndex;
           if (elem.progress < 1) {
@@ -42,9 +57,9 @@ const Agence = () => {
   });
 
   return (
-    <div>
+    <div className="bg-black">
       {" "}
-      <div className="section1">
+      <div className="section1 relative py-1">
         <div
           ref={imageDivRef}
           className="h-[20vw] w-[15vw] overflow-hidden rounded-4xl absolute top-96 left-[40vw]"
